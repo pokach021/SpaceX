@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rootVC: UIViewController {
         let tabBarVC = UITabBarController()
         tabBarVC.tabBar.tintColor = .coral
+        tabBarVC.tabBar.unselectedItemTintColor = .champagne
         tabBarVC.tabBar.barTintColor = .queenBlue
         let rocket = NavigationViewController(rootViewController: RocketsViewController())
         rocket.tabBarItem = UITabBarItem(title: "Rockets", image: UIImage(named: "rocket"), tag: 0)
@@ -32,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = rootVC
+        //window.rootViewController = NavigationViewController(rootViewController: WebBrowserViewController())
         self.window = window
         window.makeKeyAndVisible()
         

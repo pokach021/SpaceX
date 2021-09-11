@@ -6,24 +6,24 @@
 //
 
 import UIKit
+import WebKit
 
 class NavigationViewController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.barTintColor = .queenBlue
         self.navigationBar.tintColor = .coral
+        self.toolbar.barTintColor = .queenBlue
     }
     
     func configureViewControllerWithVectorButton(vc: UIViewController) {
-        
-       // let vectorButton = UIBarButtonItem(image: UIImage(named: "vector"), style: .plain, target: nil, action: nil)
-        var vectorButton: UIButton {
+        let vectorButton: UIButton = {
             let vectorButton = UIButton()
             vectorButton.setImage(UIImage(named: "orange-vector"), for: .normal)
             
             return vectorButton
-        }
+        }()
         
         let vectorBarItem = UIBarButtonItem(customView: vectorButton)
         let currentWidth = vectorBarItem.customView?.widthAnchor.constraint(equalToConstant: 25)
@@ -45,7 +45,53 @@ class NavigationViewController: UINavigationController {
         ])
         
     }
-
-   
-
+    
+    func configureWBNavigation(vc: UIViewController, targetToUpdate: WKWebView) {
+       
+        let backButton: UIButton = {
+            let backButton = UIButton()
+            backButton.setImage(UIImage(named: "button-back"), for: .normal)
+            
+            return backButton
+        }()
+        
+        let nextButton: UIButton = {
+            let nextButton = UIButton()
+            nextButton.setImage(UIImage(named: "button-next"), for: .normal)
+            
+            return nextButton
+        }()
+        
+        let shareButton: UIButton = {
+            let shareButton = UIButton()
+            shareButton.setImage(UIImage(named: "share"), for: .normal)
+            
+            return shareButton
+        }()
+        
+        let safariButton: UIButton = {
+            let safariButton = UIButton()
+            safariButton.setImage(UIImage(named: "safari"), for: .normal)
+            
+            return safariButton
+        }()
+        
+        let previousButtonItem = UIBarButtonItem(customView: backButton)
+        let nextButtonItem = UIBarButtonItem(customView: nextButton)
+        let shareButtonItem = UIBarButtonItem(customView: shareButton)
+        let safariButtonItem = UIBarButtonItem(customView: safariButton)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let refreshButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: targetToUpdate, action: #selector(targetToUpdate.reload))
+        let backButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismisSelf(_:)))
+        vc.navigationItem.rightBarButtonItem = refreshButtonItem
+        vc.navigationItem.leftBarButtonItem = backButtonItem
+        vc.toolbarItems = [previousButtonItem, spacer, nextButtonItem, spacer, shareButtonItem, spacer, safariButtonItem]
+        vc.navigationController?.isToolbarHidden = false
+        
+    }
+    
+    @objc func dismisSelf(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

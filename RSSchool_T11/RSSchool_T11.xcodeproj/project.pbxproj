@@ -15,6 +15,11 @@
 		D941CB3226E8BEB40081F36F /* LaunchpadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */; };
 		D941CB3626E8C05A0081F36F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3526E8C05A0081F36F /* Colors.swift */; };
 		D941CB3C26E8D17C0081F36F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */; };
+		D98AA46126EC8A9C008A69DA /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA46026EC8A9C008A69DA /* WebBrowserViewController.swift */; };
+		D98BD10526EB856900F324F9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */; };
+		D98BD10826EB85B800F324F9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */; };
+		D99DA52526EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */; };
+		D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsViewController.swift; sourceTree = "<group>"; };
 		D941CB3526E8C05A0081F36F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		D98AA46026EC8A9C008A69DA /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
+		D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketsVC+CollectionView.swift"; sourceTree = "<group>"; };
+		D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,21 +71,23 @@
 			isa = PBXGroup;
 			children = (
 				D941CB1C26E8BC470081F36F /* Info.plist */,
+				D98BD0FE26EB7A3800F324F9 /* Resources */,
+				D99DA52726EA3B8F00DBB7C8 /* Custom */,
 				D941CB3426E8C02F0081F36F /* Extensions */,
 				D941CB2926E8BE430081F36F /* Views */,
-				D941CB2826E8BE2D0081F36F /* Resources */,
+				D941CB2826E8BE2D0081F36F /* Supporting Files */,
 			);
 			path = RSSchool_T11;
 			sourceTree = "<group>";
 		};
-		D941CB2826E8BE2D0081F36F /* Resources */ = {
+		D941CB2826E8BE2D0081F36F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				D941CB0E26E8BC450081F36F /* AppDelegate.swift */,
 				D941CB1726E8BC470081F36F /* Assets.xcassets */,
 				D941CB1926E8BC470081F36F /* LaunchScreen.storyboard */,
 			);
-			path = Resources;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D941CB2926E8BE430081F36F /* Views */ = {
@@ -85,6 +97,7 @@
 				D941CB2E26E8BE9C0081F36F /* LaunchesViewController.swift */,
 				D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */,
 				D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */,
+				D98AA46026EC8A9C008A69DA /* WebBrowserViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,8 +106,42 @@
 			isa = PBXGroup;
 			children = (
 				D941CB3526E8C05A0081F36F /* Colors.swift */,
+				D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D98BD0FE26EB7A3800F324F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D98BD0FF26EB7A5400F324F9 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D98BD0FF26EB7A5400F324F9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */,
+				D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D99DA52726EA3B8F00DBB7C8 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D99DA52826EA3B9A00DBB7C8 /* Cells */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		D99DA52826EA3B9A00DBB7C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98BD10526EB856900F324F9 /* Roboto-Regular.ttf in Resources */,
 				D941CB1B26E8BC470081F36F /* LaunchScreen.storyboard in Resources */,
+				D98BD10826EB85B800F324F9 /* Roboto-Bold.ttf in Resources */,
 				D941CB1826E8BC470081F36F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */,
 				D941CB3C26E8D17C0081F36F /* NavigationViewController.swift in Sources */,
+				D98AA46126EC8A9C008A69DA /* WebBrowserViewController.swift in Sources */,
+				D99DA52526EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift in Sources */,
 				D941CB3626E8C05A0081F36F /* Colors.swift in Sources */,
 				D941CB2B26E8BE890081F36F /* RocketsViewController.swift in Sources */,
 				D941CB2F26E8BE9C0081F36F /* LaunchesViewController.swift in Sources */,
