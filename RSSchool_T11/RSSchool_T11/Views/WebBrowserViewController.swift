@@ -11,7 +11,7 @@ import WebKit
 class WebBrowserViewController: UIViewController, WKNavigationDelegate {
     
     var webView = WKWebView()
-    var websites = ["wikipedia.org"]
+    var websites = ["apple.com","wikipedia.org"]
     
     override func loadView() {
         webView.navigationDelegate = self

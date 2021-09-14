@@ -15,11 +15,19 @@
 		D941CB3226E8BEB40081F36F /* LaunchpadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */; };
 		D941CB3626E8C05A0081F36F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3526E8C05A0081F36F /* Colors.swift */; };
 		D941CB3C26E8D17C0081F36F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */; };
+		D94C223F26F090FE006CD1F0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C223E26F090FE006CD1F0 /* CustomLabel.swift */; };
+		D94C224326F0A674006CD1F0 /* DetailRocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C224226F0A674006CD1F0 /* DetailRocketViewController.swift */; };
+		D94C224826F0A927006CD1F0 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C224726F0A927006CD1F0 /* CustomTextView.swift */; };
+		D94C224B26F0C5EC006CD1F0 /* DetailStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C224A26F0C5EC006CD1F0 /* DetailStackView.swift */; };
+		D94C225326F0D9F0006CD1F0 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D94C225226F0D9F0006CD1F0 /* Roboto-Medium.ttf */; };
+		D94C225626F10088006CD1F0 /* DetailRocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C225526F10088006CD1F0 /* DetailRocketCollectionViewCell.swift */; };
+		D94C225926F101EF006CD1F0 /* DetailRocketVC+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C225826F101EF006CD1F0 /* DetailRocketVC+CollectionViewCell.swift */; };
 		D98AA46126EC8A9C008A69DA /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA46026EC8A9C008A69DA /* WebBrowserViewController.swift */; };
 		D98BD10526EB856900F324F9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */; };
 		D98BD10826EB85B800F324F9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */; };
 		D99DA52526EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */; };
 		D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */; };
+		D9B446F126EF2E9000A276C6 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B446F026EF2E9000A276C6 /* RocketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +41,19 @@
 		D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsViewController.swift; sourceTree = "<group>"; };
 		D941CB3526E8C05A0081F36F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		D94C223E26F090FE006CD1F0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		D94C224226F0A674006CD1F0 /* DetailRocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRocketViewController.swift; sourceTree = "<group>"; };
+		D94C224726F0A927006CD1F0 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		D94C224A26F0C5EC006CD1F0 /* DetailStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStackView.swift; sourceTree = "<group>"; };
+		D94C225226F0D9F0006CD1F0 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		D94C225526F10088006CD1F0 /* DetailRocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRocketCollectionViewCell.swift; sourceTree = "<group>"; };
+		D94C225826F101EF006CD1F0 /* DetailRocketVC+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailRocketVC+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		D98AA46026EC8A9C008A69DA /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketsVC+CollectionView.swift"; sourceTree = "<group>"; };
 		D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
+		D9B446F026EF2E9000A276C6 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +86,11 @@
 		D941CB0D26E8BC450081F36F /* RSSchool_T11 */ = {
 			isa = PBXGroup;
 			children = (
+				D9B446EF26EF2E6F00A276C6 /* Model */,
 				D941CB1C26E8BC470081F36F /* Info.plist */,
 				D98BD0FE26EB7A3800F324F9 /* Resources */,
 				D99DA52726EA3B8F00DBB7C8 /* Custom */,
-				D941CB3426E8C02F0081F36F /* Extensions */,
+				D941CB3426E8C02F0081F36F /* Extensions+Protocols */,
 				D941CB2926E8BE430081F36F /* Views */,
 				D941CB2826E8BE2D0081F36F /* Supporting Files */,
 			);
@@ -93,7 +110,7 @@
 		D941CB2926E8BE430081F36F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D941CB2A26E8BE890081F36F /* RocketsViewController.swift */,
+				D94C224526F0A679006CD1F0 /* Rocket */,
 				D941CB2E26E8BE9C0081F36F /* LaunchesViewController.swift */,
 				D941CB3126E8BEB40081F36F /* LaunchpadsViewController.swift */,
 				D941CB3B26E8D17C0081F36F /* NavigationViewController.swift */,
@@ -102,13 +119,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D941CB3426E8C02F0081F36F /* Extensions */ = {
+		D941CB3426E8C02F0081F36F /* Extensions+Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				D941CB3526E8C05A0081F36F /* Colors.swift */,
 				D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */,
+				D94C225826F101EF006CD1F0 /* DetailRocketVC+CollectionViewCell.swift */,
 			);
-			path = Extensions;
+			path = "Extensions+Protocols";
+			sourceTree = "<group>";
+		};
+		D94C223D26F090B7006CD1F0 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				D94C223E26F090FE006CD1F0 /* CustomLabel.swift */,
+				D94C224726F0A927006CD1F0 /* CustomTextView.swift */,
+				D94C224A26F0C5EC006CD1F0 /* DetailStackView.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		D94C224526F0A679006CD1F0 /* Rocket */ = {
+			isa = PBXGroup;
+			children = (
+				D941CB2A26E8BE890081F36F /* RocketsViewController.swift */,
+				D94C224226F0A674006CD1F0 /* DetailRocketViewController.swift */,
+			);
+			path = Rocket;
 			sourceTree = "<group>";
 		};
 		D98BD0FE26EB7A3800F324F9 /* Resources */ = {
@@ -123,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D98BD10426EB856900F324F9 /* Roboto-Regular.ttf */,
+				D94C225226F0D9F0006CD1F0 /* Roboto-Medium.ttf */,
 				D98BD10726EB85B800F324F9 /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
@@ -131,6 +169,7 @@
 		D99DA52726EA3B8F00DBB7C8 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				D94C223D26F090B7006CD1F0 /* UIElements */,
 				D99DA52826EA3B9A00DBB7C8 /* Cells */,
 			);
 			path = Custom;
@@ -140,8 +179,17 @@
 			isa = PBXGroup;
 			children = (
 				D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */,
+				D94C225526F10088006CD1F0 /* DetailRocketCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D9B446EF26EF2E6F00A276C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9B446F026EF2E9000A276C6 /* RocketModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94C225326F0D9F0006CD1F0 /* Roboto-Medium.ttf in Resources */,
 				D98BD10526EB856900F324F9 /* Roboto-Regular.ttf in Resources */,
 				D941CB1B26E8BC470081F36F /* LaunchScreen.storyboard in Resources */,
 				D98BD10826EB85B800F324F9 /* Roboto-Bold.ttf in Resources */,
@@ -215,14 +264,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94C225626F10088006CD1F0 /* DetailRocketCollectionViewCell.swift in Sources */,
+				D94C224826F0A927006CD1F0 /* CustomTextView.swift in Sources */,
 				D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */,
+				D94C224B26F0C5EC006CD1F0 /* DetailStackView.swift in Sources */,
+				D9B446F126EF2E9000A276C6 /* RocketModel.swift in Sources */,
+				D94C223F26F090FE006CD1F0 /* CustomLabel.swift in Sources */,
 				D941CB3C26E8D17C0081F36F /* NavigationViewController.swift in Sources */,
 				D98AA46126EC8A9C008A69DA /* WebBrowserViewController.swift in Sources */,
+				D94C225926F101EF006CD1F0 /* DetailRocketVC+CollectionViewCell.swift in Sources */,
 				D99DA52526EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift in Sources */,
 				D941CB3626E8C05A0081F36F /* Colors.swift in Sources */,
 				D941CB2B26E8BE890081F36F /* RocketsViewController.swift in Sources */,
 				D941CB2F26E8BE9C0081F36F /* LaunchesViewController.swift in Sources */,
 				D941CB0F26E8BC450081F36F /* AppDelegate.swift in Sources */,
+				D94C224326F0A674006CD1F0 /* DetailRocketViewController.swift in Sources */,
 				D941CB3226E8BEB40081F36F /* LaunchpadsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

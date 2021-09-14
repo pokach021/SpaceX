@@ -6,80 +6,42 @@
 //
 
 import UIKit
+import Foundation
 
 class RocketCollectionViewCell: UICollectionViewCell {
     
-    lazy var mainLabel: UILabel = {
-        let mainLabel = UILabel()
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        mainLabel.font = UIFont(name: "Roboto-Bold", size: 24)
-        mainLabel.textColor = .smookyBlack
-        mainLabel.text = "Falcon Heavy"
-        return mainLabel
+    lazy var mainLabel = CustomLabel(labelColor: .smookyBlack, labelFontSize: 24)
+    
+    lazy var firstLaunchLabel: CustomLabel = {
+        let firstLaunchLabel = CustomLabel(labelColor: .smookyBlack, labelFontSize: 14)
+        firstLaunchLabel.text = "First Launch"
+        return firstLaunchLabel
     }()
     
-    lazy var firstLaunchLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .smookyBlack
-        label.text = "First Launch"
-        return label
+    lazy var launchCostLabel: CustomLabel = {
+        let launchCostLabel = CustomLabel(labelColor: .smookyBlack, labelFontSize: 14)
+        launchCostLabel.text = "Launch cost"
+        return launchCostLabel
     }()
     
-    lazy var launchDateLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .slateGray
-        label.text = "Februaury 6, 2018"
-        return label
+    lazy var successLabel: CustomLabel = {
+        let successLabel = CustomLabel(labelColor: .smookyBlack, labelFontSize: 14)
+        successLabel.text = "Success"
+        return successLabel
     }()
     
-    lazy var launchCostLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .smookyBlack
-        label.text = "Launch cost"
-        return label
-    }()
+    lazy var launchDateLabel = CustomLabel(labelColor: .slateGray, labelFontSize: 14)
+    lazy var costLabel = CustomLabel(labelColor: .slateGray, labelFontSize: 14)
+    lazy var percentLabel = CustomLabel(labelColor: .slateGray, labelFontSize: 14)
     
-    lazy var costLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .slateGray
-        label.text = "90000000$"
-        return label
-    }()
-    
-    lazy var successLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .smookyBlack
-        label.text = "Success"
-        return label
-    }()
-    
-    lazy var percentLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Roboto-Bold", size: 14)
-        label.textColor = .slateGray
-        label.text = "100%"
-        return label
-    }()
-    
-    lazy var mainIamgeView: UIImageView = {
-        let mainIamgeView = UIImageView()
-        mainIamgeView.translatesAutoresizingMaskIntoConstraints = false
-        mainIamgeView.clipsToBounds = true
-        mainIamgeView.contentMode = .scaleAspectFill
-        mainIamgeView.backgroundColor = .black
-        mainIamgeView.layer.cornerRadius = 10
-        return mainIamgeView
+    lazy var mainImageView: UIImageView = {
+        let mainImageView = UIImageView()
+        mainImageView.translatesAutoresizingMaskIntoConstraints = false
+        mainImageView.clipsToBounds = true
+        mainImageView.contentMode = .scaleAspectFill
+        mainImageView.backgroundColor = .black
+        mainImageView.layer.cornerRadius = 10
+        return mainImageView
     }()
     
     required init?(coder: NSCoder) {
@@ -90,63 +52,75 @@ class RocketCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupCell()
         setupLayout()
+        
     }
     
     func setupCell() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
     }
-    //MARK: Change to stackview labels
     /// Adding constraints to subviews
     func setupLayout() {
-        self.addSubview(mainIamgeView)
+        self.addSubview(mainImageView)
         NSLayoutConstraint.activate([
-            mainIamgeView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            mainIamgeView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            mainIamgeView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            mainIamgeView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -120)
+            mainImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            mainImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            mainImageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            mainImageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -120)
         ])
         self.addSubview(mainLabel)
         NSLayoutConstraint.activate([
-            mainLabel.topAnchor.constraint(equalTo: mainIamgeView.bottomAnchor, constant: 10),
+            mainLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 10),
             mainLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             mainLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -150),
             mainLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -80)
         ])
-        self.addSubview(firstLaunchLabel)
+        
+        let firstStackView: UIStackView = {
+            let stackView = UIStackView(arrangedSubviews: [firstLaunchLabel, launchCostLabel, successLabel])
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.spacing = 30
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }()
+        
+        let secondStackView: UIStackView = {
+            let stackView = UIStackView(arrangedSubviews: [launchDateLabel, costLabel, percentLabel])
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.spacing = 30
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }()
+        
+        let verticalStackView: UIStackView = {
+            let verticalStackView = UIStackView(arrangedSubviews: [firstStackView, secondStackView])
+            verticalStackView.axis = .vertical
+            verticalStackView.distribution = .fillEqually
+            verticalStackView.spacing = 2
+            verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+            return verticalStackView
+        }()
+        
+        self.addSubview(verticalStackView)
         NSLayoutConstraint.activate([
-            firstLaunchLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 27),
-            firstLaunchLabel.leadingAnchor.constraint(equalTo: mainLabel.leadingAnchor),
-            firstLaunchLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -250),
-            firstLaunchLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40)
-        ])
-        self.addSubview(launchDateLabel)
-        NSLayoutConstraint.activate([
-            launchDateLabel.topAnchor.constraint(equalTo: firstLaunchLabel.bottomAnchor, constant: 2),
-            launchDateLabel.leadingAnchor.constraint(equalTo: mainLabel.leadingAnchor),
-            launchDateLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -200),
-            launchDateLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        ])
-        self.addSubview(launchCostLabel)
-        NSLayoutConstraint.activate([
-            launchCostLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 27),
-            launchCostLabel.leadingAnchor.constraint(equalTo: firstLaunchLabel.trailingAnchor, constant: 60),
-            launchCostLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -100),
-            launchCostLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40)
-        ])
-        self.addSubview(costLabel)
-        NSLayoutConstraint.activate([
-            costLabel.topAnchor.constraint(equalTo: launchCostLabel.bottomAnchor, constant: 2),
-            costLabel.leadingAnchor.constraint(equalTo: launchCostLabel.leadingAnchor),
-            costLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -110),
-            costLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        ])
-        self.addSubview(successLabel)
-        NSLayoutConstraint.activate([
-            successLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 27),
-            successLabel.leadingAnchor.constraint(equalTo: launchCostLabel.trailingAnchor, constant: 30),
-            successLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            successLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            verticalStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 27),
+            verticalStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            verticalStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            verticalStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
+    
+    func configureWithItem(rocket: RocketModel) {
+        self.mainLabel.text = rocket.name
+        self.costLabel.text = "\(rocket.cost_per_launch)$"
+        self.percentLabel.text = "\(rocket.success_rate_pct)%"
+        self.launchDateLabel.text = rocket.first_flight
+        
+    }
+    
 }
+
+
+

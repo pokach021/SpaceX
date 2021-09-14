@@ -12,11 +12,14 @@ extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RocketCell", for: indexPath) as! RocketCollectionViewCell
+        let rocket = self.rocketData[indexPath.item]
+        cell.configureWithItem(rocket: rocket)
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5//rocketData.count
+        rocketData.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -24,7 +27,8 @@ extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = NavigationViewController(rootViewController: WebBrowserViewController())
+        let vc = DetailRocketViewController()
+        vc.dataSource = rocketData[indexPath.item]
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.present(vc, animated: true, completion: nil)
         

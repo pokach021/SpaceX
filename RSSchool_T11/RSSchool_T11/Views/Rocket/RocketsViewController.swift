@@ -9,7 +9,7 @@ import UIKit
 
 class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
-    var rocketData = [Any]()
+    var rocketData = [RocketModel]()
     
     
     lazy var collectionView: UICollectionView =  {
@@ -26,13 +26,14 @@ class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         return collectionView
     }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .queenBlue
         collectionView.delegate = self
         collectionView.dataSource = self
         setupLayout()
+        fetchData()
         if let navi = navigationController as? NavigationViewController {
             navi.configureViewControllerWithVectorButton(vc: self)
         }
@@ -48,8 +49,34 @@ class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         ])
     }
     
+    func fetchData() {
+        let jsonUrlString = "https://api.spacexdata.com/v4/rockets"
+        weak var weakSelf = self
+        guard let url = URL(string: jsonUrlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            guard let data = data else { return }
+            
+            do {
+                let rockets = try JSONDecoder().decode([RocketModel].self, from: data)
+                print(rockets)
+                DispatchQueue.main.async {
+                    if error != nil {
+                        print("Fucking Error")
+                    } else {
+                        weakSelf?.rocketData = rockets
+                        weakSelf?.collectionView.reloadData()
+                    }
+                }
+                
+            } catch let error {
+                print("Fucking Error: \(error)")
+            }
+            
+        }.resume()
+        
+    }
     
-
     
-
 }
