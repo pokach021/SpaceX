@@ -1,5 +1,5 @@
 //
-//  RocketsViewController.swift
+//  LaunchesViewController.swift
 //  RSSchool_T11
 //
 //  Created by Andrew Pokachailo on 9/8/21.
@@ -7,35 +7,36 @@
 
 import UIKit
 
-class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+class LaunchesViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
-    var rocketData = [RocketModel]()
+    var launchesData = [LaunchesModel]()
     
     
     lazy var collectionView: UICollectionView =  {
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .vertical
-        flow.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 360)
+        flow.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 145)
         flow.minimumLineSpacing = 30
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(RocketCollectionViewCell.self, forCellWithReuseIdentifier: "RocketCell")
+        collectionView.register(LaunchesCollectionViewCell.self, forCellWithReuseIdentifier: "LaunchCell")
         collectionView.backgroundColor = .queenBlue
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .queenBlue
+        setupLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
-        setupLayout()
         fetchData()
+        
         if let navi = navigationController as? NavigationViewController {
             navi.configureViewControllerWithVectorButton(vc: self)
+            navi.configureViewControllerWithSegmentControl(vc: self)
         }
     }
     
@@ -50,9 +51,19 @@ class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     }
     
     func fetchData() {
-        let jsonUrlString = "https://api.spacexdata.com/v4/rockets"
+        
+        let jsonUrlString = "https://api.spacexdata.com/v5/launches"
         weak var weakSelf = self
         guard let url = URL(string: jsonUrlString) else { return }
+        
+        let decoder = JSONDecoder()
+//        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        dateFormatter.locale = Locale(identifier: "en_BY")
+//        dateFormatter.timeZone = TimeZone(identifier: "America/Los_Angeles")
+//        
+//        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
         let session = URLSession.shared
             session.dataTask(with: url) { (data, response, error) in
@@ -60,13 +71,14 @@ class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayou
             guard let data = data else { return }
             
             do {
-                let rockets = try JSONDecoder().decode([RocketModel].self, from: data)
+                let launches = try decoder.decode([LaunchesModel].self, from: data)
                 DispatchQueue.main.async {
                     if error != nil {
                         print("Fucking Error")
                     } else {
-                        weakSelf?.rocketData = rockets
+                        weakSelf?.launchesData = launches
                         weakSelf?.collectionView.reloadData()
+                        print(self.launchesData)
                     }
                 }
                 
@@ -78,5 +90,7 @@ class RocketsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
     }
     
+
     
+
 }

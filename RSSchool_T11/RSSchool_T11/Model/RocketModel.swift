@@ -17,14 +17,28 @@ struct RocketModel: Codable {
     let first_flight: String
     let height: Height
     let diameter: Diameter
+    let mass: Mass
     let flickr_images: [String]
     let engines: Engines
+    let first_stage: FirstStage
+    let second_stage: SecondStage
+    let landing_legs: LandingLegs
 }
 
 struct Height: Codable {
     let meters: Double
     let feet: Double
 
+}
+
+struct LandingLegs: Codable {
+    let number: Int
+    let material: String?
+}
+
+struct Mass: Codable {
+    let kg: Int
+    let lb: Int
 }
 
 struct Diameter: Codable {
@@ -38,9 +52,19 @@ struct ThrustSeaLevel: Codable {
     
 }
 
+struct ThrustVacuum: Codable {
+    let kN: Int
+    let lbf: Int
+}
+
 struct Isp: Codable {
     let sea_level: Int
     let vacuum: Int
+}
+
+struct Thrust: Codable {
+    let kN: Int
+    let lbf: Int
 }
 
 struct Engines: Codable {
@@ -54,6 +78,23 @@ struct Engines: Codable {
     let isp: Isp
 }
 
+struct FirstStage: Codable {
+    let thrust_sea_level: ThrustSeaLevel
+    let thrust_vacuum: ThrustVacuum
+    let reusable: Bool
+    let fuel_amount_tons: Double
+    let burn_time_sec: Int?
+    let engines: Int
+}
+
+struct SecondStage: Codable {
+    let reusable: Bool
+    let engines: Int
+    let fuel_amount_tons: Double
+    let burn_time_sec: Int?
+    let thrust: Thrust
+    
+}
 
 //"engines": {
 //   "isp": {

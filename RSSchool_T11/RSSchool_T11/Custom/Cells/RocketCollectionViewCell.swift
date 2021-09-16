@@ -37,10 +37,10 @@ class RocketCollectionViewCell: UICollectionViewCell {
     lazy var mainImageView: UIImageView = {
         let mainImageView = UIImageView()
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
-        mainImageView.clipsToBounds = true
+        mainImageView.clipsToBounds = false
         mainImageView.contentMode = .scaleAspectFill
         mainImageView.backgroundColor = .black
-        mainImageView.layer.cornerRadius = 10
+        //mainImageView.layer.cornerRadius = 10
         return mainImageView
     }()
     
@@ -118,7 +118,20 @@ class RocketCollectionViewCell: UICollectionViewCell {
         self.percentLabel.text = "\(rocket.success_rate_pct)%"
         self.launchDateLabel.text = rocket.first_flight
         
+        guard let url = URL(string: rocket.flickr_images.last!) else { return }
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: url) { (data, response, error) in
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.mainImageView.image = image
+                }
+            }
+        }.resume()
     }
+    
+    
     
 }
 

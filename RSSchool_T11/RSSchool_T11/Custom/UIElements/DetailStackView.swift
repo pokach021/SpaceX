@@ -13,7 +13,7 @@ class DetailStackView: UIStackView {
         super.init(frame: .zero)
         self.axis = .horizontal
         self.distribution = .fillEqually
-        self.spacing = 50
+        self.spacing = 15
         self.translatesAutoresizingMaskIntoConstraints = false
         self.addArrangedSubview(setupFirstStackView(subviewsNames: description))
         self.addArrangedSubview(setupSecondStackView(subviewsNames: descriptionFromWeb))

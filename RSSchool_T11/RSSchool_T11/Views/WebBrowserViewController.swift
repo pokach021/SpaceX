@@ -11,7 +11,8 @@ import WebKit
 class WebBrowserViewController: UIViewController, WKNavigationDelegate {
     
     var webView = WKWebView()
-    var websites = ["apple.com","wikipedia.org"]
+    var websites = ["wikipedia.org"]
+    //var websites = [String]()
     
     override func loadView() {
         webView.navigationDelegate = self
@@ -20,7 +21,8 @@ class WebBrowserViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: websites.last!)!
+        
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
 
