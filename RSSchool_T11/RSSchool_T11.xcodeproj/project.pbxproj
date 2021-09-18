@@ -35,6 +35,7 @@
 		D99DA52526EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */; };
 		D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */; };
 		D9B446F126EF2E9000A276C6 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B446F026EF2E9000A276C6 /* RocketModel.swift */; };
+		D9BC0D0026F5CC4B001B886B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC0CFF26F5CC4B001B886B /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D99DA52426EA3B4300DBB7C8 /* RocketsVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketsVC+CollectionView.swift"; sourceTree = "<group>"; };
 		D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9B446F026EF2E9000A276C6 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
+		D9BC0CFF26F5CC4B001B886B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +110,9 @@
 		D941CB0D26E8BC450081F36F /* RSSchool_T11 */ = {
 			isa = PBXGroup;
 			children = (
+				D941CB1C26E8BC470081F36F /* Info.plist */,
 				D92BFFBF26F3AF3C003766DF /* Downloader */,
 				D9B446EF26EF2E6F00A276C6 /* Model */,
-				D941CB1C26E8BC470081F36F /* Info.plist */,
 				D98BD0FE26EB7A3800F324F9 /* Resources */,
 				D99DA52726EA3B8F00DBB7C8 /* Custom */,
 				D941CB3426E8C02F0081F36F /* Extensions+Protocols */,
@@ -148,6 +150,7 @@
 				D98500FF26F3443F00226283 /* Launches */,
 				D98500F926F3425500226283 /* Rocket */,
 				D941CB3526E8C05A0081F36F /* Colors.swift */,
+				D9BC0CFF26F5CC4B001B886B /* Shadow.swift */,
 			);
 			path = "Extensions+Protocols";
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				D94C224326F0A674006CD1F0 /* DetailRocketViewController.swift in Sources */,
 				D985010126F3446100226283 /* LaunchesVC+CollectionView.swift in Sources */,
 				D98500FD26F343FA00226283 /* LaunchesCollectionViewCell.swift in Sources */,
+				D9BC0D0026F5CC4B001B886B /* Shadow.swift in Sources */,
 				D92BFFC126F3AF50003766DF /* Downloader.swift in Sources */,
 				D941CB3226E8BEB40081F36F /* LaunchpadsViewController.swift in Sources */,
 			);

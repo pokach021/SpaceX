@@ -40,7 +40,12 @@ class RocketCollectionViewCell: UICollectionViewCell {
         mainImageView.clipsToBounds = false
         mainImageView.contentMode = .scaleAspectFill
         mainImageView.backgroundColor = .black
-        //mainImageView.layer.cornerRadius = 10
+        
+//        let maskPath = UIBezierPath(roundedRect: mainImageView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
+//        let maskLayer = CAShapeLayer()
+//        maskLayer.frame = mainImageView.bounds
+//        maskLayer.path = maskPath.cgPath
+//        mainImageView.layer.mask = maskLayer
         return mainImageView
     }()
     

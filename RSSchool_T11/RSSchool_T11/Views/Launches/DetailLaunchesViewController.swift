@@ -38,6 +38,7 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
         patchLabel.translatesAutoresizingMaskIntoConstraints = false
         patchLabel.layer.cornerRadius = 20
         patchLabel.backgroundColor = .white
+
         return patchLabel
     }()
     
@@ -65,9 +66,10 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
     lazy var processLabel: UILabel = {
         let processLabel = UILabel()
         processLabel.translatesAutoresizingMaskIntoConstraints = false
-        processLabel.backgroundColor = .cyanProcess
+        processLabel.backgroundColor = .white
         processLabel.clipsToBounds = true
         processLabel.layer.cornerRadius = 16
+        
         return processLabel
     }()
     
@@ -114,7 +116,7 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .horizontal
         flow.itemSize = CGSize(width: UIScreen.main.bounds.width - 275, height: 200)
-        flow.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        flow.sectionInset = UIEdgeInsets(top: 78, left: 20, bottom: 0, right: 20)
         flow.minimumLineSpacing = 20
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
@@ -125,6 +127,12 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
         collectionView.dataSource = self
         collectionView.register(DetailRocketCollectionViewCell.self, forCellWithReuseIdentifier: "DetailLaunchCell")
         return collectionView
+    }()
+    
+    lazy var rocketLabel: CustomLabel = {
+        let rocketLabel = CustomLabel(labelColor: .smookyBlack, labelFontSize: 24)
+        rocketLabel.text = "Rocket"
+        return rocketLabel
     }()
     
     override func viewDidLoad() {
@@ -197,7 +205,7 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
             descriptionText.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
             descriptionText.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
             descriptionText.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            descriptionText.heightAnchor.constraint(equalToConstant: 120)
+//            descriptionText.heightAnchor.constraint(equalToConstant: 120)
         ])
         scrollView.addSubview(overviewLabel)
         NSLayoutConstraint.activate([
@@ -213,19 +221,31 @@ class DetailLaunchesViewController: UIViewController, UIScrollViewDelegate {
             overviewStackView.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 20),
             overviewStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -1270),
         ])
-        scrollView.addSubview(imagesLabel)
+        scrollView.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: overviewStackView.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+        ])
+        if dataSource.links.flickr.original.isEmpty {
+            collectionView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        } else {
+            collectionView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        }
+        collectionView.addSubview(imagesLabel)
         NSLayoutConstraint.activate([
             imagesLabel.leadingAnchor.constraint(equalTo: overviewLabel.leadingAnchor),
             imagesLabel.trailingAnchor.constraint(equalTo: overviewLabel.trailingAnchor),
-            imagesLabel.topAnchor.constraint(equalTo: overviewStackView.bottomAnchor, constant: 30),
+            imagesLabel.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 30),
             imagesLabel.heightAnchor.constraint(equalToConstant: 28)
         ])
-        scrollView.addSubview(collectionView)
+        
+        scrollView.addSubview(rocketLabel)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: imagesLabel.bottomAnchor, constant: 20),
-            collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
+            rocketLabel.leadingAnchor.constraint(equalTo: overviewLabel.leadingAnchor),
+            rocketLabel.trailingAnchor.constraint(equalTo: overviewLabel.trailingAnchor),
+            rocketLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
+            rocketLabel.heightAnchor.constraint(equalToConstant: 28)
         ])
     }
     

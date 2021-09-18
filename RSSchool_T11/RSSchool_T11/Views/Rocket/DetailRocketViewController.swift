@@ -229,7 +229,6 @@ class DetailRocketViewController: UIViewController, UIScrollViewDelegate, UIColl
             descriptionText.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
             descriptionText.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
             descriptionText.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            descriptionText.heightAnchor.constraint(equalToConstant: 120)
         ])
         scrollView.addSubview(overviewLabel)
         NSLayoutConstraint.activate([
@@ -257,7 +256,7 @@ class DetailRocketViewController: UIViewController, UIScrollViewDelegate, UIColl
             collectionView.topAnchor.constraint(equalTo: imagesLabel.bottomAnchor, constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
+            collectionView.heightAnchor.constraint(equalToConstant: 210)
         ])
         scrollView.addSubview(enginesLabel)
         NSLayoutConstraint.activate([

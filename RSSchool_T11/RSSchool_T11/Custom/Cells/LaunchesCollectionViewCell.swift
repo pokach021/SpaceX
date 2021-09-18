@@ -21,7 +21,7 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         let patchLabel = UILabel()
         patchLabel.translatesAutoresizingMaskIntoConstraints = false
         patchLabel.layer.cornerRadius = 20
-        patchLabel.backgroundColor = .white
+        patchLabel.backgroundColor = .almostWhite
         return patchLabel
     }()
     
@@ -29,16 +29,17 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         let patchLabelImageView = UIImageView()
         patchLabelImageView.translatesAutoresizingMaskIntoConstraints = false
         patchLabelImageView.clipsToBounds = false
-        patchLabelImageView.backgroundColor = .white
+        patchLabelImageView.backgroundColor = .almostWhite
         return patchLabelImageView
     }()
     
     lazy var processLabel: UILabel = {
         let processLabel = UILabel()
         processLabel.translatesAutoresizingMaskIntoConstraints = false
-        processLabel.backgroundColor = .cyanProcess
+        processLabel.backgroundColor = .almostWhite
         processLabel.clipsToBounds = true
         processLabel.layer.cornerRadius = 16
+        
         return processLabel
     }()
     
@@ -48,10 +49,17 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         numberLabel.textColor = .cyanProcess
         numberLabel.font = UIFont(name: "Roboto-Medium", size: 17)
         numberLabel.textAlignment = .center
-        numberLabel.backgroundColor = .white
+        numberLabel.backgroundColor = .almostWhite
         numberLabel.layer.cornerRadius = 15
         return numberLabel
     }()
+    // MARK: Adding layers
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        numberLabel.createShadows()
+        processLabel.createShadows()
+        patchLabel.createShadows()
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -60,7 +68,7 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
-        self.backgroundColor = .white
+        self.backgroundColor = .almostWhite
         self.layer.cornerRadius = 15
     }
     

@@ -17,6 +17,11 @@ class CustomTextView: UITextView {
         self.textAlignment = .left
         self.isScrollEnabled = false
         self.isEditable = false
+        
+        let fixedWidth = UIScreen.main.bounds.size.width - 50
+        let newSize = self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        self.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        
     }
     
     required init?(coder: NSCoder) {
