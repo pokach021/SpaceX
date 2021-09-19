@@ -17,6 +17,7 @@ class CustomTextView: UITextView {
         self.textAlignment = .left
         self.isScrollEnabled = false
         self.isEditable = false
+        self.backgroundColor = .almostWhite
         
         let fixedWidth = UIScreen.main.bounds.size.width - 50
         let newSize = self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))

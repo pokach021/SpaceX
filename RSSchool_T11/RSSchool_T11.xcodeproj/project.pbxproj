@@ -36,6 +36,7 @@
 		D99DA52A26EA3BD100DBB7C8 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */; };
 		D9B446F126EF2E9000A276C6 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B446F026EF2E9000A276C6 /* RocketModel.swift */; };
 		D9BC0D0026F5CC4B001B886B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC0CFF26F5CC4B001B886B /* Shadow.swift */; };
+		D9EF5CD826F71BDB0016D77B /* UIShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF5CD726F71BDB0016D77B /* UIShadowLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		D99DA52926EA3BD100DBB7C8 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9B446F026EF2E9000A276C6 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		D9BC0CFF26F5CC4B001B886B /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		D9EF5CD726F71BDB0016D77B /* UIShadowLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShadowLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				D94C224726F0A927006CD1F0 /* CustomTextView.swift */,
 				D94C224A26F0C5EC006CD1F0 /* DetailStackView.swift */,
 				D97AAF0B26F1F28C0014B247 /* WBButton.swift */,
+				D9EF5CD726F71BDB0016D77B /* UIShadowLabel.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D941CB2B26E8BE890081F36F /* RocketsViewController.swift in Sources */,
 				D97AAF0C26F1F28C0014B247 /* WBButton.swift in Sources */,
 				D941CB2F26E8BE9C0081F36F /* LaunchesViewController.swift in Sources */,
+				D9EF5CD826F71BDB0016D77B /* UIShadowLabel.swift in Sources */,
 				D92BFFBA26F38D25003766DF /* DetailLaunchesViewController.swift in Sources */,
 				D941CB0F26E8BC450081F36F /* AppDelegate.swift in Sources */,
 				D94C224326F0A674006CD1F0 /* DetailRocketViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class DetailRocketViewController: UIViewController, UIScrollViewDelegate, UIColl
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = .almostWhite
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -97,7 +97,7 @@ class DetailRocketViewController: UIViewController, UIScrollViewDelegate, UIColl
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .almostWhite
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(DetailRocketCollectionViewCell.self, forCellWithReuseIdentifier: "DetailRocketCell")

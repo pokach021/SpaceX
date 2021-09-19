@@ -14,7 +14,7 @@ class WBButton: UIButton {
         self.setTitle(title, for: .normal)
         self.setTitleColor(.coral, for: .normal)
         self.layer.cornerRadius = 15
-        self.backgroundColor = .white
+        self.backgroundColor = .almostWhite
         self.tintColor = .coral
         self.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 17)
@@ -37,8 +37,8 @@ class WBButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.createShadow(color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), offset: CGSize(width: -1, height: -1), btnLayer: self.layer)
-        self.createShadow(color: UIColor(red: 0.682, green: 0.682, blue: 0.753, alpha: 0.4), offset: CGSize(width: 1.5, height: 1.5), btnLayer: self.layer)
+        self.createShadow(color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), offset: CGSize(width: -6, height: -6), btnLayer: self.layer)
+        self.createShadow(color: UIColor(red: 0.682, green: 0.682, blue: 0.753, alpha: 0.4), offset: CGSize(width: 6, height: 6), btnLayer: self.layer)
 //        self.layer.insertSublayer(createShadow(color: UIColor(red: 1, green: 1, blue: 1, alpha: 1), offset: CGSize(width: -1, height: -1)), at: 0)
 //        self.layer.insertSublayer(createShadow(color: UIColor(red: 0.682, green: 0.682, blue: 0.753, alpha: 0.4), offset: CGSize(width: 1.5, height: 1.5)), at: 0)
     }

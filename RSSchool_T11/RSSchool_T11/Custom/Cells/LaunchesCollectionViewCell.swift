@@ -17,13 +17,24 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         return dateLabel
     }()
     
-    lazy var patchLabel: UILabel = {
-        let patchLabel = UILabel()
+//    lazy var patchLabel: UILabel = {
+//        let patchLabel = UILabel()
+//        patchLabel.translatesAutoresizingMaskIntoConstraints = false
+//        patchLabel.layer.cornerRadius = 20
+//        patchLabel.backgroundColor = .almostWhite
+//
+//        return patchLabel
+//    }()
+    var patchLabel: UIShadowLabel = {
+        let patchLabel = UIShadowLabel()
         patchLabel.translatesAutoresizingMaskIntoConstraints = false
         patchLabel.layer.cornerRadius = 20
         patchLabel.backgroundColor = .almostWhite
+        
         return patchLabel
     }()
+    
+    
     
     lazy var patchLabelImageView: UIImageView = {
         let patchLabelImageView = UIImageView()
@@ -33,8 +44,18 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         return patchLabelImageView
     }()
     
-    lazy var processLabel: UILabel = {
-        let processLabel = UILabel()
+//    lazy var processLabel: UILabel = {
+//        let processLabel = UILabel()
+//        processLabel.translatesAutoresizingMaskIntoConstraints = false
+//        processLabel.backgroundColor = .almostWhite
+//        processLabel.clipsToBounds = true
+//        processLabel.layer.cornerRadius = 16
+//
+//        return processLabel
+//    }()
+    
+    lazy var processLabel: UIShadowLabel = {
+        let processLabel = UIShadowLabel()
         processLabel.translatesAutoresizingMaskIntoConstraints = false
         processLabel.backgroundColor = .almostWhite
         processLabel.clipsToBounds = true
@@ -43,23 +64,71 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         return processLabel
     }()
     
-    lazy var numberLabel: UILabel = {
-        let numberLabel = UILabel()
+//    lazy var numberLabel: UILabel = {
+//        let numberLabel = UILabel()
+//        numberLabel.translatesAutoresizingMaskIntoConstraints = false
+//        numberLabel.textColor = .cyanProcess
+//        numberLabel.font = UIFont(name: "Roboto-Medium", size: 17)
+//        numberLabel.textAlignment = .center
+//        numberLabel.backgroundColor = .almostWhite
+//        numberLabel.layer.cornerRadius = 15
+//
+//        return numberLabel
+//    }()
+    
+    lazy var numberLabel: UIShadowLabel = {
+        let numberLabel = UIShadowLabel()
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
-        numberLabel.textColor = .cyanProcess
-        numberLabel.font = UIFont(name: "Roboto-Medium", size: 17)
-        numberLabel.textAlignment = .center
         numberLabel.backgroundColor = .almostWhite
         numberLabel.layer.cornerRadius = 15
+       
         return numberLabel
     }()
-    // MARK: Adding layers
+    
+    private var numberLabelShadowLayers: [CALayer] = []
+    private var patchLabelShadowLayers: [CALayer] = []
+    private var processLabelShadowLayers: [CALayer] = []
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        numberLabel.createShadows()
-        processLabel.createShadows()
-        patchLabel.createShadows()
+//        processLabelShadowLayers.forEach {
+//            $0.frame = processLabel.bounds
+//            $0.shadowPath = UIBezierPath(
+//                roundedRect: processLabel.bounds,
+//                cornerRadius: processLabel.layer.cornerRadius
+//            ).cgPath
+//        }
+//        numberLabelShadowLayers.forEach {
+//            $0.frame = numberLabel.bounds
+//            $0.shadowPath = UIBezierPath(
+//                roundedRect: numberLabel.bounds,
+//                cornerRadius: numberLabel.layer.cornerRadius
+//            ).cgPath
+//        }
+//        patchLabelShadowLayers.forEach {
+//            $0.frame = patchLabel.bounds
+//            $0.shadowPath = UIBezierPath(
+//                roundedRect: patchLabel.bounds,
+//                cornerRadius: patchLabel.layer.cornerRadius
+//            ).cgPath
+//        }
+//        let shadowLabel = UIShadowLabel(viewForShadow: patchLabel)
+//        patchLabel.addSubview(shadowLabel)
+//        patchLabel.bringSubviewToFront(patchLabelImageView)
+//
+//        let shadowNumberLabel = UIShadowLabel(viewForShadow: numberLabel)
+//        numberLabel.addSubview(shadowNumberLabel)
+//        self.bringSubviewToFront(numberLabel)
+//
+//        let shadowLabelForProcess = UIShadowLabel(viewForShadow: processLabel)
+//        processLabel.addSubview(shadowLabelForProcess)
     }
+    // MARK: Adding layers
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -68,6 +137,9 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
+//        processLabelShadowLayers = UIView.createShadows(view: processLabel)
+//        numberLabelShadowLayers = UIView.createShadows(view: numberLabel)
+//        patchLabelShadowLayers = UIView.createShadows(view: patchLabel)
         self.backgroundColor = .almostWhite
         self.layer.cornerRadius = 15
     }
@@ -101,6 +173,7 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
             patchLabelImageView.leadingAnchor.constraint(equalTo: patchLabel.leadingAnchor, constant: 9),
             patchLabelImageView.trailingAnchor.constraint(equalTo: patchLabel.trailingAnchor, constant: -9)
         ])
+        patchLabel.sendSubviewToBack(patchLabel)
         self.addSubview(processLabel)
         NSLayoutConstraint.activate([
             processLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 20),

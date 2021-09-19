@@ -32,10 +32,10 @@ class DetailRocketCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.createShadows()
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.createShadows()
+//    }
     
     func setupLayout() {
         self.addSubview(mainImageView)

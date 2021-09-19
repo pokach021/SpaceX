@@ -57,7 +57,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupCell()
         setupLayout()
-        
+        self.clipsToBounds = true
     }
     
     func setupCell() {
